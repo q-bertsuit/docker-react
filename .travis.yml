@@ -9,3 +9,11 @@ before_install:
 
 script:
   - docker run -e CI=true qbertsuit/docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker"
+  env: "Docker-env"
+  bucket_name: "elasticbeanstalk-us-east-2-932870999400"
+  bucket_path: "docker"
